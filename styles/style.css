@@ -135,7 +135,7 @@ header #search.active a {
   background: #CC0020;
 }
 
-header nav a {
+header nav li {
   display:block;
 	padding:0 10px;
 	color:#FFF;
@@ -145,7 +145,7 @@ header nav a {
   transition: 0.2s all;
 }
 
-header nav a:hover {
+header nav li:hover {
   background-color: #fff;
   color: #CC0020;
 }

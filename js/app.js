@@ -16,7 +16,7 @@ var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
 url += '?' + $.param({
   'api-key': "67440d21b3a04fe49f4211828a60f982"
 });
-{debugger}
+
 return $.ajax({
   url: url,
   method: 'GET',
@@ -32,7 +32,13 @@ return $.ajax({
 var nytArticles = nytAPI();
 
 // list the titles
-var showTitles = function(){
-  var num = nytList.length;
-  console.log('There are ' + num + ' articles from the NYT');
+var showTitles = function(arr){
+  var num = arr.length;
+  for (var i = 0; i <= num; i++)
+  console.log(arr[i].headline.main);
 }
+
+// add event handler for the news sources
+$('nav').on('click','ul ul li',function(){
+  
+});
