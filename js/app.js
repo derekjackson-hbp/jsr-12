@@ -37,7 +37,7 @@ var apis = {
                 var image = 'https://static01.nyt.com/' + a.multimedia[0].url;
               }
               else {
-                var image = '../jsr12/images/Logo-NYT.jpg';
+                var image = '../jsr-12/images/Logo-NYT.jpg';
               };
               var innerTemp = {
                 link : a.web_url,
