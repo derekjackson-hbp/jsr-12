@@ -52,7 +52,8 @@
           </div>
         </div>
         <section id="main" class="container hide">
-          <article class="article">
+          <h1>Articles</h1>
+        <!--  <article class="article">
             <section class="featuredImage">
               <img src="images/article_placeholder_1.jpg" alt="" />
             </section>
@@ -103,12 +104,30 @@
               526
             </section>
             <div class="clearfix"></div>
-          </article>
+          </article> -->
         </section>
 
+        <script id="template" type="text/x-handlebars-template">
+          <article class="article">
+            <section class="featuredImage">
+            <a href="{{link}}"><img src="{{pic}}" alt="" /></a>
+            </section>
+            <section class="articleContent">
+                <a href="{{link}}"><h3>{{hed}}</h3></a>
+                <p>{{abstract}}</p>
+            </section>
+            <section class="impressions">
+
+            </section>
+            <div class="clearfix"></div>
+          </article>
+        </script>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
         <script src="js/app.js"></script>
+
 
     </body>
 </html>
