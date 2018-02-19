@@ -4,6 +4,10 @@
   margin: 0 auto;
 }
 
+.dim {
+  opacity: 0.4;
+}
+
 #popUp {
   opacity: 0.95;
   position: absolute;
@@ -234,4 +238,19 @@ nav ul ul li {
   margin-top: 15px;
   text-align: right;
   color: #097FB2;
+}
+
+.loader {
+  position:fixed;
+  top:50%;
+  left:50%;
+  text-align:center;
+}
+.loader img {
+  width:30px;
+
+}
+
+.hide {
+  display: none;
 }
