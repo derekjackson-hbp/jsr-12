@@ -52,6 +52,7 @@ var apis = {
             var articles = result.articles;
               articles.forEach(function(a){
               // just temporary place holders for checking. Can delete these when the innerTemp object is ready
+
               var link = a.url;
               var hed = a.title;
               var abstract = a.description;
@@ -86,7 +87,6 @@ var apis = {
             });},
             complete: function(){
               $('.loader').toggle();
-              {debugger};
               $('#main').toggle();}
         });
 
@@ -113,10 +113,10 @@ var apis = {
           url: url,
           method: 'GET',
           success: function(result){
-            {debugger}
             // parse the response into normalized containers/variables that go into an object for handlebars templating
             var articles = result.response.docs
             articles.forEach(function(a){
+                {debugger};
               // just temporary place holders for checking. Can delete these when the innerTemp object is ready
               var link = a.web_url;
               var hed = a.headline.main;
@@ -136,6 +136,7 @@ var apis = {
               if (subj == undefined){
                 subj = 'not available'
               };
+                {debugger};
               var innerTemp = {
                 date : a.pubdate,
                 link : a.web_url,
@@ -182,8 +183,9 @@ var showTitles = function(arr){
 // add event handler for the news sources
 $('nav').on('click','ul ul li',function(){
   $('#main').toggle();
+  $('article.article').remove();
 
   $('.loader').toggle();
-  var source = $(this).data('api');
-  var read = apis[source]();
+  var src = $(this).data('api');
+  var read = apis[src]();
 });
