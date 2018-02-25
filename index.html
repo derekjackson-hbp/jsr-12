@@ -37,12 +37,12 @@
           <section class="container">
             <a href="#"><h1>Feedr</h1></a>
             <nav>
-              <ul role="menubar" label="news sources">
-                <li>News Source: <span>Source Name</span>
-                  <ul>
+              <ul role="menu" aria-label="news sources">
+                <li role="button" id="chooseSource" tabindex="0">Choose a news source:
+                  <ul role="menu" id="sourcesList">
                       <li role="menuitem" data-api="nytAPI" id="nyt">New York Times</li>
-                      <li>Source 2</li>
-                      <li>Source 3</li>
+                      <li role="menuitem" data-api="newsAPI" id="wp">News API</li>
+                      <li role="menuitem">Source 3</li>
                   </ul>
                 </li>
               </ul>
@@ -129,7 +129,13 @@
                 <a href="{{link}}"><h3>{{hed}}</h3></a>
                 <p>{{abstract}}</p>
             </section>
+            <ul>
+              <li>Type: {{type}}</li>
+              <li>Subject: {{subject}}</li>
+              <li>Score/Rank: {{score}}</li>
+            </ul>
             <section class="impressions">
+
 
             </section>
             <div class="clearfix"></div>
