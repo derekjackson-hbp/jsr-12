@@ -302,6 +302,18 @@ nav ul ul li {
   }
 }
 /* Modal Window styles */
-modal {
+.modal {
   display:none;
+}
+img.info {
+  height:2em;
+  margin-bottom: :10px;
+  display:inline-block;
+}
+img.info:hover{
+  cursor:alias;
+}
+div.inform{
+  width:100%;
+  text-align: right;
 }

@@ -78,6 +78,7 @@ var apis = {
                 type : a.type,
                 subject : a.sectionName,
                 pic : image,
+                newsSource : "The Guardian"
               };
               placeArticles(innerTemp);
               //var html = template(innerTemp)
@@ -141,7 +142,8 @@ var apis = {
                 score : 'none',
                 type : a.source.name,
                 subject : subj,
-                pic : image
+                pic : image,
+                newsSource : a.source.name
               };
 
               placeArticles(innerTemp);
@@ -180,7 +182,6 @@ var apis = {
             // parse the response into normalized containers/variables that go into an object for handlebars templating
             var articles = result.response.docs
             articles.forEach(function(a){
-                {debugger};
               // just temporary place holders for checking. Can delete these when the innerTemp object is ready
               var link = a.web_url;
               var hed = a.headline.main;
@@ -210,7 +211,8 @@ var apis = {
                 type : a.type_of_material,
                 source : a.byline.original,
                 subject : subj,
-                pic : image
+                pic : image,
+                newsSource : "The New York Times"
               };
               placeArticles(innerTemp);
               //var html = template(innerTemp)
@@ -231,6 +233,9 @@ var apis = {
           throw err;
         });*/
   },
+  displayModal : function(){
+    alert('Modal')
+  }
 };
 
 
@@ -244,7 +249,10 @@ var showTitles = function(arr){
   console.log(arr[i].headline.main);
 }
 
+
+
 // add event handler for the news sources
+
 $('nav').on('click','ul ul li',function(){
   $('#main').toggle();
   $('article.article').remove();
@@ -252,4 +260,8 @@ $('nav').on('click','ul ul li',function(){
   $('.loader').toggle();
   var src = $(this).data('api');
   var read = apis[src]();
+});
+$('#main').on('click','.info',function(event){
+  apis['displayModal']();
+
 });
