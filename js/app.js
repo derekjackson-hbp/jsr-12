@@ -3,7 +3,7 @@
 */
 
 //Does articles need to be global?
-
+var see
 
 //handlebars variables
 var source   = $('#template').html();
@@ -49,7 +49,7 @@ var apis = {
             console.log(result);
 
             var articles = result.response.results;
-
+            see = articles;
               articles.forEach(function(a){
               // just temporary place holders for checking. Can delete these when the innerTemp object is ready
 
@@ -82,8 +82,8 @@ var apis = {
               placeArticles(innerTemp);
               //var html = template(innerTemp)
               //$('#main').append(html)
-              console.log(link + '\b ' + hed + '\b ' + abstract + '\b ' + source  + '\b ' + image);
-            });},
+            });
+          },
             complete: function(){
               $('.loader').toggle();
               $('#main').toggle();}
@@ -114,9 +114,10 @@ var apis = {
             console.log(result);
 
             var articles = result.articles;
+            see = articles;
               articles.forEach(function(a){
               // just temporary place holders for checking. Can delete these when the innerTemp object is ready
-
+{debugger};
               var link = a.url;
               var hed = a.title;
               var abstract = a.description;
@@ -125,12 +126,10 @@ var apis = {
               //var type = a.type_of_material;
               //var score = a.score;
               var subj = a.section_name;
-              var image_source = a.urlToImage;
-              if (image_source){
-                var image = image_source;
-              }
-              else {
-                var image = '../jsr-12/images/Logo-NYT.jpg';
+              var image = a.urlToImage
+
+              if (image == undefined){
+                var image = '../jsr-12/images/news-logo.jpg';
               };
               if (subj == undefined){
                 subj = 'not available'
@@ -144,11 +143,12 @@ var apis = {
                 subject : subj,
                 pic : image
               };
+
               placeArticles(innerTemp);
               //var html = template(innerTemp)
               //$('#main').append(html)
-              console.log(link + '\b ' + hed + '\b ' + abstract + '\b ' + source  + '\b ' + image);
-            });},
+            });
+          },
             complete: function(){
               $('.loader').toggle();
               $('#main').toggle();}
@@ -215,8 +215,8 @@ var apis = {
               placeArticles(innerTemp);
               //var html = template(innerTemp)
               //$('#main').append(html)
-              console.log(link + '\b ' + hed + '\b ' + abstract + '\b ' + source + '\b ' + words + '\b ' + type + '\b ' + image);
-            });},
+            });
+          },
             complete: function(){
               $('.loader').toggle();
               {debugger};
