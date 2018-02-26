@@ -37,7 +37,7 @@ var time = setTimeout(function(){
 //returns articles from the NYTimes api and process/normalize the data
 var apis = {
   guardAPI:function(){
-    var url = 'http://content.guardianapis.com/search?show-elements=image&page-size=10&show-fields=all&';
+    var url = 'https://content.guardianapis.com/search?show-elements=image&page-size=10&show-fields=all&';
     url += $.param({
       "api-key":"e3fee825-b18f-40ea-8f3b-9bde4544cf32"
     });
@@ -49,7 +49,7 @@ var apis = {
             console.log(result);
 
             var articles = result.response.results;
-          
+
               articles.forEach(function(a){
               // just temporary place holders for checking. Can delete these when the innerTemp object is ready
 
