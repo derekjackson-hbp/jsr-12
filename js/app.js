@@ -49,7 +49,7 @@ var apis = {
             console.log(result);
 
             var articles = result.response.results;
-            {debugger};
+          
               articles.forEach(function(a){
               // just temporary place holders for checking. Can delete these when the innerTemp object is ready
 
