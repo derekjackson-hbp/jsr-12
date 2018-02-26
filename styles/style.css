@@ -301,3 +301,7 @@ nav ul ul li {
     transform: scaleY(1.8);
   }
 }
+/* Modal Window styles */
+modal {
+  display:none;
+}

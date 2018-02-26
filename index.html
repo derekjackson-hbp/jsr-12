@@ -41,8 +41,8 @@
                 <li role="button" id="chooseSource" tabindex="0">Choose a news source:
                   <ul role="menu" id="sourcesList">
                       <li role="menuitem" data-api="nytAPI" id="nyt">New York Times</li>
-                      <li role="menuitem" data-api="newsAPI" id="wp">News API</li>
-                      <li role="menuitem">Source 3</li>
+                      <li role="menuitem" data-api="guardAPI" id="wp">The Guardian</li>
+                      <li role="menuitem" data-api="newsAPI" id="wp">Mix and Match</li>
                   </ul>
                 </li>
               </ul>
@@ -122,7 +122,8 @@
 
         <script id="template" type="text/x-handlebars-template">
           <article class="article">
-            <section class="featuredImage">
+
+            <section class="featuredImage" data-url="{{link}}">
             <a href="{{link}}"><img src="{{pic}}" alt="" /></a>
             </section>
             <section class="articleContent">
@@ -135,7 +136,11 @@
               <li>Score/Rank: {{score}}</li>
             </ul>
             <section class="impressions">
-
+              <div id=modal>
+                <!--<img src="{{pic}}" alt="" />
+                <h3>{{hed}}</h3>
+                <p>{{abstract}}</p>-->
+              </div>
 
             </section>
             <div class="clearfix"></div>

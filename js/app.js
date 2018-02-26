@@ -36,6 +36,70 @@ var time = setTimeout(function(){
 
 //returns articles from the NYTimes api and process/normalize the data
 var apis = {
+  guardAPI:function(){
+    var url = 'http://content.guardianapis.com/search?show-elements=image&page-size=10&show-fields=all&';
+    url += $.param({
+      "api-key":"e3fee825-b18f-40ea-8f3b-9bde4544cf32"
+    });
+    $.ajax({
+          url: url,
+          method: 'GET',
+          success: function(result){
+            // parse the response into normalized containers/variables that go into an object for handlebars templating
+            console.log(result);
+
+            var articles = result.response.results;
+            {debugger};
+              articles.forEach(function(a){
+              // just temporary place holders for checking. Can delete these when the innerTemp object is ready
+
+              var link = a.webUrl;
+              var hed = a.webTitle;
+              var pubdate = a.webPublicationDate;
+              var abstract = a.fields.trailText;
+              //var source = a.source.name;
+              var words = a.fields.wordcount;
+              var type = a.type;
+              var author = a.fields.byline;
+              //var score = a.score;
+              var subj = a.sectionName;
+              var image = a.fields.thumbnail;
+              if (image == undefined){
+                var image = '../jsr-12/images/guardian-logo.png'
+              }
+              if (subj == undefined){
+                subj = 'not available'
+              };
+              var innerTemp = {
+                link : a.webUrl,
+                hed : a.webTitle,
+                abstract : a.fields.trailText,
+                score : 'none',
+                type : a.type,
+                subject : a.sectionName,
+                pic : image,
+              };
+              placeArticles(innerTemp);
+              //var html = template(innerTemp)
+              //$('#main').append(html)
+              console.log(link + '\b ' + hed + '\b ' + abstract + '\b ' + source  + '\b ' + image);
+            });},
+            complete: function(){
+              $('.loader').toggle();
+              $('#main').toggle();}
+        });
+
+        /*.done(function(result) {
+          console.log(result);
+          articles = {
+            hed : result.response.docs
+          }
+          {debugger}
+        }).fail(function(err) {
+          throw err;
+        });*/
+
+  },
   newsAPI:function(){
     var url = 'https://newsapi.org/v2/top-headlines';
     url += '?' + $.param({
