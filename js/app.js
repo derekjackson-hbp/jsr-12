@@ -260,7 +260,7 @@ var apis = {
 
 // add event handler for the news sources
 (function(){
-  alert('v2.1.4')
+  alert('v2.1.5')
 })();
 
 $('nav').on('click','ul ul li',function(){
