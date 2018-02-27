@@ -26,7 +26,7 @@ $('#chooseSource').on('focus',function(){
 
     });
 
-// testing the loader
+// the loader
 var time = (function(){
  $('.loader').toggle();
  $(document).ready(function(){
@@ -73,6 +73,9 @@ var apis = {
               if (subj == undefined){
                 subj = 'not available'
               };
+              if (author == undefined){
+                author = ""
+              };
               var innerTemp = {
                 link : a.webUrl,
                 hed : a.webTitle,
@@ -81,7 +84,9 @@ var apis = {
                 type : a.type,
                 subject : a.sectionName,
                 pic : image,
-                newsSource : "The Guardian"
+                newsSource : "The Guardian",
+                author : author,
+                date: a.webPublicationDate
               };
               placeArticles(innerTemp);
               //var html = template(innerTemp)
@@ -146,7 +151,9 @@ var apis = {
                 type : a.source.name,
                 subject : subj,
                 pic : image,
-                newsSource : a.source.name
+                newsSource : a.source.name,
+                author: a.author,
+                date: a.publishedAt
               };
 
               placeArticles(innerTemp);
@@ -212,6 +219,7 @@ var apis = {
                 score : a.score,
                 type : a.type_of_material,
                 source : a.byline.original,
+                author: a.byline.original,
                 subject : subj,
                 pic : image,
                 newsSource : "The New York Times"
@@ -235,7 +243,7 @@ var apis = {
         });*/
   },
   displayModal : function(){
-    alert('Modal')
+    $('.modal').toggle();
   }
 };
 
@@ -249,7 +257,7 @@ var apis = {
 
 // add event handler for the news sources
 (function(){
-  alert('v2.1.1')
+  alert('v2.1.4')
 })();
 
 $('nav').on('click','ul ul li',function(){

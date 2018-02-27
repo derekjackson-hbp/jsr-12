@@ -301,10 +301,7 @@ nav ul ul li {
     transform: scaleY(1.8);
   }
 }
-/* Modal Window styles */
-.modal {
-  display:none;
-}
+
 img.info {
   height:2em;
   display:inline-block;
@@ -316,4 +313,53 @@ div.inform{
   width:100%;
   text-align: right;
   padding-bottom:10px;
+}
+
+/* Modal Window styles */
+
+.modal {
+    display:none;
+    text-align:center;
+    /* display: none;  Hidden by default */
+    position: fixed; /* Stay in place */
+   /* z-index: 1;  Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+
+    background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
+
+}
+
+.modal-content {
+  background-color:white;
+  display:inline-block;
+  
+  width:70%;
+  padding:10px;
+}
+div.modal-content header{
+  background-color:#fff;
+  position:relative;
+
+}
+.modal-content img {
+  margin-top:1em;
+  height:5em;
+}
+.modal-content h3{
+  align:text-top;
+  margin-right:auto;
+}
+
+.modal-content p {
+  text-align:left;
+}
+
+.modal-content ul {
+  text-align:left;
+  list-style-type: none;
 }

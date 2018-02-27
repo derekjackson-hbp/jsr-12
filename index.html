@@ -133,22 +133,28 @@
                 <img src="../images/info-flat.png" label="open details in a modal layer" title="details" alt="get more article info" class="info"/>
                 </div>
             </section>
-            <!-- <ul>
-              <li>Type: {{type}}</li>
-              <li>Subject: {{subject}}</li>
-              <li>Score/Rank: {{score}}</li>
-            </ul> -->
-            <section class="impressions">
-              <div class="modal">
-                <a href="{{link}}">Go to the {{newsSource}} and read the article</a>
 
-                <h3>{{hed}}</h3>
-                <p>{{abstract}}</p>
+            <section class="impressions"></section>
 
-              </div>
-
-            </section>
             <div class="clearfix"></div>
+            <div class="modal">
+              <div class="modal-content">
+                  <header>
+                  <img src="{{pic}}" alt="article thumbnail" />
+                  <h3>{{hed}}</h3>
+                  <h4>{{author}}<h4>
+                  </header>
+                  <section role="main">
+                    <p>{{date}}
+                    <p>{{abstract}}</p>
+                    <ul>
+                      <li>Type: {{type}}</li>
+                      <li>Subject: {{subject}}</li>
+                    </ul>
+                    <a href="{{link}}"><p>Read the entire article on {{newsSource}}</p></a>
+                  </section>
+                </div>
+            </div>
           </article>
         </script>
 
