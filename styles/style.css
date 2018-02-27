@@ -337,7 +337,7 @@ div.inform{
 .modal-content {
   background-color:white;
   display:inline-block;
-  
+
   width:70%;
   padding:10px;
 }
@@ -362,4 +362,5 @@ div.modal-content header{
 .modal-content ul {
   text-align:left;
   list-style-type: none;
+  margin-left: -2em;
 }
