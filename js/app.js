@@ -244,6 +244,9 @@ var apis = {
   },
   displayModal : function(){
     $('.modal').toggle();
+  },
+  hideModal : function(){
+    $('.modal').toggle();
   }
 };
 
@@ -270,5 +273,7 @@ $('nav').on('click','ul ul li',function(){
 });
 $('#main').on('click','.info',function(event){
   apis['displayModal']();
-
+});
+$('#main').on('click','button.close',function(event){
+    apis['hideModal']();
 });
