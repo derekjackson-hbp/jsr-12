@@ -307,7 +307,6 @@ nav ul ul li {
 }
 img.info {
   height:2em;
-  margin-bottom: :10px;
   display:inline-block;
 }
 img.info:hover{
@@ -316,4 +315,5 @@ img.info:hover{
 div.inform{
   width:100%;
   text-align: right;
+  padding-bottom:10px;
 }

@@ -27,10 +27,13 @@ $('#chooseSource').on('focus',function(){
     });
 
 // testing the loader
-var time = setTimeout(function(){
-  $('.loader').toggle();
-  $('#main').toggle();
-},1000);
+var time = (function(){
+ $('.loader').toggle();
+ $(document).ready(function(){
+   $('#main').toggle();
+ });
+})();
+
 
 // Next: Use API and console.log the data returned
 
@@ -201,7 +204,6 @@ var apis = {
               if (subj == undefined){
                 subj = 'not available'
               };
-                {debugger};
               var innerTemp = {
                 date : a.pubdate,
                 link : a.web_url,
@@ -221,7 +223,6 @@ var apis = {
           },
             complete: function(){
               $('.loader').toggle();
-              {debugger};
               $('#main').toggle();}
         })/*.done(function(result) {
           console.log(result);
@@ -242,16 +243,14 @@ var apis = {
 // saving the reurned NYtimes api object in a variable
 //var nytArticles = nytAPI;
 
-// list the titles
-var showTitles = function(arr){
-  var num = arr.length;
-  for (var i = 0; i <= num; i++)
-  console.log(arr[i].headline.main);
-}
+
 
 
 
 // add event handler for the news sources
+(function(){
+  alert('v2.1.1')
+})();
 
 $('nav').on('click','ul ul li',function(){
   $('#main').toggle();
