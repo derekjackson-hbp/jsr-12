@@ -130,15 +130,15 @@
                 <h3>{{hed}}</h3></a>
                 <p>{{abstract}}</p>
                 <div class="inform">
-                <img src="../jsr-12/images/info-flat.png" label="open details in a modal layer" title="details" alt="get more article info" class="info"/>
+                <img src="../jsr-12/images/info-flat.png" label="open details in a modal layer" title="details" alt="get more article info" class="info" data-id="{{id}}"/>
                 </div>
             </section>
 
             <section class="impressions"></section>
             <div class="clearfix"></div>
-            <div class="modal">
+            <div class="modal" id="{{id}}">
               <div class="modal-content">
-                <button class="close">Close Window</button>
+                <button class="close" data-id="{{id}}">Close Window</button>
                   <header>
                   <img src="{{pic}}" alt="article thumbnail" />
                   <h3>{{hed}}</h3>

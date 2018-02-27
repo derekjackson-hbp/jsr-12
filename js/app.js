@@ -53,9 +53,11 @@ var apis = {
 
             var articles = result.response.results;
             see = articles;
+            var i = 1;
               articles.forEach(function(a){
               // just temporary place holders for checking. Can delete these when the innerTemp object is ready
-
+              var id = "grd" + i;
+              i++;
               var link = a.webUrl;
               var hed = a.webTitle;
               var pubdate = a.webPublicationDate;
@@ -77,6 +79,7 @@ var apis = {
                 author = ""
               };
               var innerTemp = {
+                id : id,
                 link : a.webUrl,
                 hed : a.webTitle,
                 abstract : a.fields.trailText,
@@ -124,9 +127,11 @@ var apis = {
 
             var articles = result.articles;
             see = articles;
+            var i = 1;
               articles.forEach(function(a){
               // just temporary place holders for checking. Can delete these when the innerTemp object is ready
-{debugger};
+              var id = "news" + i;
+              i++;
               var link = a.url;
               var hed = a.title;
               var abstract = a.description;
@@ -144,6 +149,7 @@ var apis = {
                 subj = 'not available'
               };
               var innerTemp = {
+                id : id,
                 link : a.url,
                 hed : a.title,
                 abstract : a.description,
@@ -191,8 +197,11 @@ var apis = {
           success: function(result){
             // parse the response into normalized containers/variables that go into an object for handlebars templating
             var articles = result.response.docs
+            var i = 1
             articles.forEach(function(a){
               // just temporary place holders for checking. Can delete these when the innerTemp object is ready
+              var id = "nyt" + i;
+              i++;
               var link = a.web_url;
               var hed = a.headline.main;
               var abstract = a.snippet;
@@ -212,6 +221,7 @@ var apis = {
                 subj = 'not available'
               };
               var innerTemp = {
+                id : id,
                 date : a.pubdate,
                 link : a.web_url,
                 hed : a.headline.main,
@@ -242,11 +252,13 @@ var apis = {
           throw err;
         });*/
   },
-  displayModal : function(){
-    $('.modal').toggle();
+  displayModal : function(x){
+    var revealModal = '#' + x;
+    $(revealModal).toggle();
   },
-  hideModal : function(){
-    $('.modal').toggle();
+  hideModal : function(x){
+    var removeModal = '#' + x;
+    $(removeModal).toggle();
   }
 };
 
@@ -272,8 +284,10 @@ $('nav').on('click','ul ul li',function(){
   var read = apis[src]();
 });
 $('#main').on('click','.info',function(event){
-  apis['displayModal']();
+  var $currentModal = $(this).attr('data-id');
+  apis['displayModal']($currentModal);
 });
 $('#main').on('click','button.close',function(event){
-    apis['hideModal']();
+    var $currentModal = $(this).attr('data-id');
+    apis['hideModal']($currentModal);
 });
