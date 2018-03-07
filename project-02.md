@@ -194,3 +194,14 @@ numeric grade on a scale.
 - __Code Quality__: Did you follow code style guidance and best practices
   covered in class, such as spacing, modularity, and semantic naming? Did you
   comment your code as your instructors have in class?
+
+# My Experience
+## Wins
+- I wanted to use this project as an opportunity to dip my tones into a library/framework so I used handlebars.js, and sucessfully created a template that I used to create each articke element and popup. 
+- I veered away from the pop-up template because I wanted to work on making the article and popup section accessible. I was able to get these up and working with handlebars. 
+- I think I was able to get the basic functionality required from the project incorporated. I did settle for the generic NewsAPI for one of my apis due to time. I was not having luck finding a third api from an individual news source so I setteld for this api, which was very simple and easy to use.
+- I also learned how helpful it is to reach out for help from others. I was stuck on one API and I reached out on Slack and talking with Christine about the Gaurdian api not only led me to another source but she helped me understand how to use it as well and saved  me a lot of time. 
+## Challenges
+- I failed at a lot of apis just to get the three I used working. It seems like finding a reliable api, that is kept up to date is not easy to find, and can make or break your application/site.
+- Making the entire webpage accessible was difficult, particularly the drop down menu. Incorporating keyboard accessbility and making the different parts of the menu accessible to an accessibility API without affecting the style or the javascript that relied on events in the menu to know when and where to retieve articles was a lot more work thatn I anticipated and I wasn't able to make it entirely accessible. 
+- I realized I have trouble keeping my code clean. I lost track of a lot of things I had set up along the way to test functionality (like console.log of values or {debugger} flags) and as a result my code got very cluttered. Even once I got rid of the code that wasn't necessary
