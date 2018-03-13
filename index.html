@@ -38,7 +38,7 @@
             <a href="#"><h1>Feedr</h1></a>
             <nav>
               <ul role="menu" aria-label="news sources">
-                <li role="button" id="chooseSource">Choose a news source:
+                <li role="button" id="chooseSource" tabindex="0">Choose a news source:
                   <ul role="menu" id="sourcesList">
                       <li role="menuitem" data-api="nytAPI" id="nyt">New York Times</li>
                       <li role="menuitem" data-api="guardAPI" id="wp">The Guardian</li>
@@ -54,10 +54,70 @@
             <div class="clearfix"></div>
           </section>
         </header>
-        
+        <div id="popUp" class="loader hidden">
+          <a href="#" class="closePopUp">X</a>
+          <div class="container">
+            <h1>Article title here</h1>
+            <p>
+              Article description/content here.
+            </p>
+            <a href="#" class="popUpAction" target="_blank">Read more from source</a>
+          </div>
+        </div>
         <section id="main" class="container hide">
           <h1>Articles</h1>
-        
+        <!--  <article class="article">
+            <section class="featuredImage">
+              <img src="images/article_placeholder_1.jpg" alt="" />
+            </section>
+            <section class="articleContent">
+                <a href="#"><h3>Test article title</h3></a>
+                <h6>Lifestyle</h6>
+            </section>
+            <section class="impressions">
+              526
+            </section>
+            <div class="clearfix"></div>
+          </article>
+          <article class="article">
+            <section class="featuredImage">
+              <img src="images/article_placeholder_2.jpg" alt="" />
+            </section>
+            <section class="articleContent">
+                <a href="#"><h3>Test article title</h3></a>
+                <h6>Lifestyle</h6>
+            </section>
+            <section class="impressions">
+              526
+            </section>
+            <div class="clearfix"></div>
+          </article>
+          <article class="article">
+            <section class="featuredImage">
+              <img src="images/article_placeholder_2.jpg" alt="" />
+            </section>
+            <section class="articleContent">
+                <a href="#"><h3>Test article title</h3></a>
+                <h6>Lifestyle</h6>
+            </section>
+            <section class="impressions">
+              526
+            </section>
+            <div class="clearfix"></div>
+          </article>
+          <article class="article">
+            <section class="featuredImage">
+              <img src="images/article_placeholder_1.jpg" alt="" />
+            </section>
+            <section class="articleContent">
+                <a href="#"><h3>Test article title</h3></a>
+                <h6>Lifestyle</h6>
+            </section>
+            <section class="impressions">
+              526
+            </section>
+            <div class="clearfix"></div>
+          </article> -->
         </section>
 
         <script id="template" type="text/x-handlebars-template">
@@ -74,6 +134,8 @@
                 </div>
             </section>
 
+            <section class="impressions"></section>
+            <div class="clearfix"></div>
             <div class="modal" id="{{id}}">
               <div class="modal-content">
                 <button class="close" data-id="{{id}}">Close Window</button>
